@@ -1,0 +1,118 @@
+/* Importing google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400&display=swap');
+
+
+
+/* Setting up the base */
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --our-grey:#333333;
+    --our-black:#222;
+    --our-green:#08F26E;
+    --our-white:#eee;
+
+    --transition:height 0.4s linear;
+
+    --large-font-size:1.8rem;
+    --medium-font-size:1.2rem;
+}
+
+
+li{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+    color:var(--our-black);
+}
+
+body{
+    color:var(--our-black);
+    font-family: 'Poppins',sans-serif;
+}
+
+
+/* ============== NAV SECTION =============== */
+.nav__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--our-black);
+    color:var(--our-white);
+}
+
+.nav__header .toggle{
+    background-color: transparent;
+    border-color: transparent;
+    font-size:1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    color:var(--our-white);
+}
+
+.nav__header .toggle:hover{
+    color: var(--our-green);
+}
+
+.links{
+    height:0;
+    overflow:hidden;
+    transition: var(--transition);
+    background-color:var(--our-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding:0 2rem;
+    padding-left:0.4rem;
+}
+
+
+.links .link a{
+    color:var(--our-white);
+}
+
+.links .link a:hover{
+    color:var(--our-green);
+}
+
+.show__links{
+    height:7rem;
+}
+
+
+/* Adding breakpoints  */
+@media screen and (min-width:560px){
+    .nav__container{
+        padding:0 3rem;
+        width:100%;
+        /* border:3px solid red; */
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--our-black);
+    }
+
+    .toggle{
+        display: none;
+    }
+
+    .links{
+        width:70%;
+        max-width:370px;
+        height:auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--our-black);
+    }
+}
